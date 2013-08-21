@@ -9,10 +9,10 @@ PizzaBtn is an interactive element that used to show custom content inside your 
 How to use PizzaBtn SDK
 -----
 
-1. First you have to register on pizzabtn.heroku.com
-2. Register your app: create new application, select it's platform (Android) and fill BundleID field (root package name of your app)
+1. Sign up to pizzabtn.heroku.com
+2. Register your app: create new application, select it's platform (Android) and BundleID (root package name of your app)
 3. Choose the site to promote in your application.
-4. Finally you have to embed PizzaBtn into your app.
+4. Integrate PizzaButton with your application
 
 Integrating PizzaBtn SDK with your Android application
 -----
@@ -21,8 +21,9 @@ Integrating PizzaBtn SDK with your Android application
 2. Add PizzaButton.jar library to your project module and dependencies
 3. Add "android.permission.INTERNET" permission to your AndroidManifest.xml 
 4. For targets with API level >= 14 all is you need is just to add the following line to onCreate method of the root activity:
-
+	
 	PizzaBtn.activate(this);
+	
 	
 For targets with lower API levels you also need to set up the following callbacks for each activity in your app:
 
@@ -61,6 +62,18 @@ For targets with lower API levels you also need to set up the following callback
 	    ...
 	}
 
+How to run example project? (using Intellij IDEA)
+---------------
+1. File->Import project..
+2. Choose directory with example sources and press "OK"
+3. "Create project from existing sources"
+4. Specify project name and press "Next"
+5. Select all directories and press "Next" 
+6. Mark "PizzaButton" library as used in the project, press "Next"
+7. Include selected module to the project and press "Next"
+8. Choose project SDK (Android 4.x.x Platform recommended), press "Next"
+9. Press "Next"
+10. Example project is ready to run.
 	
 Server side
 ---------------
