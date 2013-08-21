@@ -19,13 +19,12 @@ Integrating PizzaBtn SDK with your Android application
 
 1. Clone repository or download project ZIP
 2. Add PizzaButton.jar library to your project module and dependencies
-3. Add INTERNET permission to your AndroidManifest.xml 
-(<uses-permission android:name="android.permission.INTERNET"/>)
+3. Add "android.permission.INTERNET" permission to your AndroidManifest.xml 
 4. For targets with API level >= 14 all is you need is just to add the following line to onCreate method of the root activity:
 
 	PizzaBtn.activate(this);
 	
-For targets with lower APi levels you also need to set up the following callbacks for each activity in your app:
+For targets with lower API levels you also need to set up the following callbacks for each activity in your app:
 
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
