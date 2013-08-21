@@ -13,11 +13,16 @@ public class OtherActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.other);
+        // Callback for devices with Android API level lower than 11
+        if (android.os.Build.VERSION.SDK_INT < 11) {
+            PizzaBtn.onActivityCreated();
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityResumed(this);
         }
@@ -25,6 +30,7 @@ public class OtherActivity extends Activity {
 
     @Override
     protected void onPause() {
+        // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityPaused();
         }
@@ -33,6 +39,7 @@ public class OtherActivity extends Activity {
 
     @Override
     protected void onDestroy() {
+        // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityDestroyed(this);
         }

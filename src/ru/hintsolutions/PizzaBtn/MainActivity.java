@@ -20,7 +20,9 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this, OtherActivity.class));
             }
         });
+        // Activate Pizza Button
         PizzaBtn.activate(this);
+        // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityCreated();
         }
@@ -29,6 +31,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityResumed(this);
         }
@@ -36,6 +39,7 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onPause() {
+        // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityPaused();
         }
@@ -44,6 +48,7 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onDestroy() {
+        // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityDestroyed(this);
         }
