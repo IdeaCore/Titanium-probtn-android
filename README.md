@@ -12,7 +12,7 @@ How to use PizzaBtn SDK
 1. Sign up to pizzabtn.heroku.com
 2. Register your app: create new application, select it's platform (Android) and BundleID (root package name of your app)
 3. Choose the site to promote in your application.
-4. Integrate PizzaButton with your application
+4. Integrate PizzaButton with your application using the following instructions:
 
 Integrating PizzaBtn SDK with your Android application
 -----
@@ -61,6 +61,8 @@ For targets with lower API levels you also need to set up the following callback
 	    super.onDestroy();
 	    ...
 	}
+
+5.Feel free to control the button at any time by calling PizzaBtn.showPizzaBtn() and  PizzaBtn.hidePizzaBtn() methods.
 
 How to run example project? (using Intellij IDEA)
 ---------------
