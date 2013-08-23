@@ -20,8 +20,22 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this, OtherActivity.class));
             }
         });
+        (findViewById(R.id.showButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Show Pizza Button programmatically
+                PizzaBtn.showPizzaBtn(MainActivity.this);
+            }
+        });
+        (findViewById(R.id.hideButon)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Hide Pizza Button programmatically
+                PizzaBtn.hidePizzaBtn();
+            }
+        });
         // Activate Pizza Button
-        PizzaBtn.activate(this);
+        PizzaBtn.activate(MainActivity.this);
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityCreated();
