@@ -22,7 +22,7 @@ Integrating PizzaBtn SDK with your Android application
 3. Add "android.permission.INTERNET" permission to your AndroidManifest.xml 
 4. For targets with API level >= 14 all is you need is just to add the following line to onCreate method of the root activity:
 	
-	PizzaBtn.activate(this);
+	PizzaBtn.open(this);
 	
 	
 For targets with lower API levels you also need to set up the following callbacks for each activity in your app:
