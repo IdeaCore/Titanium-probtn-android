@@ -9,5 +9,15 @@
             android:layout_height="wrap_content"
             android:text="First activity. Tap me to open the second activity."
             android:id="@+id/button" android:layout_gravity="center"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show PizzaBtn"
+        android:id="@+id/showButton"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hide PizzaBtn"
+        android:id="@+id/hideButon"/>
 </LinearLayout>
 

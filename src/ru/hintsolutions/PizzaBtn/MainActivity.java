@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
             }
         });
         // Activate Pizza Button
-        PizzaBtn.activate(MainActivity.this);
+        PizzaBtn.open(MainActivity.this);
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityCreated();
