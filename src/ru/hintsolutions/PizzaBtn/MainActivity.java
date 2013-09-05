@@ -1,9 +1,13 @@
 package ru.hintsolutions.PizzaBtn;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+
 import ru.hintsolutions.PizzaButton.PizzaBtn;
 
 public class MainActivity extends Activity {
@@ -14,12 +18,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        (findViewById(R.id.button)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, OtherActivity.class));
-            }
-        });
+
         (findViewById(R.id.showButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,6 +38,29 @@ public class MainActivity extends Activity {
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
             PizzaBtn.onActivityCreated();
+        }
+        (findViewById(R.id.goButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PizzaBtn.setNewUrl(((EditText)findViewById(R.id.editText)).getText().toString());
+                hideSoftKeyboard(MainActivity.this);
+            }
+        });
+    }
+
+    public static void hideSoftKeyboard(Activity activity)
+    {
+        if(activity != null) {
+            InputMethodManager inputManager = (InputMethodManager)
+                    activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+            if(inputManager != null) {
+                if(activity.getCurrentFocus() != null) {
+                    if(activity.getCurrentFocus().getWindowToken() != null) {
+                        inputManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(),
+                                InputMethodManager.HIDE_NOT_ALWAYS);
+                    }
+                }
+            }
         }
     }
 
