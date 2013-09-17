@@ -6,6 +6,10 @@ What the PizzaBtn is?
 
 PizzaBtn is an interactive element that used to show custom content inside your application. If the button is tapped then the window with WebView would open. The url in the WebView is set using settings on our server.
 
+Real example:
+-----
+![ScreenShot](http://www.probtn.com/wp-content/uploads/2013/09/pizzabtn-android.gif)
+
 How to use PizzaBtn SDK
 -----
 
