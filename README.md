@@ -66,7 +66,17 @@ For targets with lower API levels you also need to set up the following callback
 	    ...
 	}
 
-5.Feel free to control the button at any time by calling PizzaBtn.showPizzaBtn() and  PizzaBtn.hidePizzaBtn() methods.
+5. Feel free to control the button at any time by calling PizzaBtn.showPizzaBtn() and  PizzaBtn.hidePizzaBtn() methods.
+6. Button usage statistics for current package can be taken using the following method with callback:
+
+	PizzaBtn.getUsageStatistics(new PizzaBtn.PizzaButtonStatisticsCallback() {
+        	@Override
+                public void done(JSONObject jsonObject, Exception e) {
+
+                    // insert your code here
+
+                }
+        });
 
 How to run example project? (using Intellij IDEA)
 ---------------
