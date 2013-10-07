@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import ru.hintsolutions.PizzaButton.PizzaBtn;
+import ru.hintsolutions.ProBtn.ProBtn;
 
 public class MainActivity extends Activity {
     /**
@@ -24,21 +24,21 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 // Show Pizza Button programmatically
-                PizzaBtn.showPizzaBtn(MainActivity.this);
+                ProBtn.show(MainActivity.this);
             }
         });
         (findViewById(R.id.hideButon)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Hide Pizza Button programmatically
-                PizzaBtn.hidePizzaBtn();
+                ProBtn.hide();
             }
         });
         // Activate Pizza Button
-        PizzaBtn.open(MainActivity.this);
+        ProBtn.open(MainActivity.this);
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
-            PizzaBtn.onActivityCreated();
+            ProBtn.onActivityCreated();
         }
     }
 
@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
         super.onResume();
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
-            PizzaBtn.onActivityResumed(this);
+            ProBtn.onActivityResumed(this);
         }
     }
 
@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
     protected void onPause() {
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
-            PizzaBtn.onActivityPaused();
+            ProBtn.onActivityPaused();
         }
         super.onPause();
     }
@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
     protected void onDestroy() {
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
-            PizzaBtn.onActivityDestroyed(this);
+            ProBtn.onActivityDestroyed(this);
         }
         super.onDestroy();
     }

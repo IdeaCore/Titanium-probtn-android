@@ -2,7 +2,7 @@ package ru.hintsolutions.PizzaBtn;
 
 import android.app.Activity;
 import android.os.Bundle;
-import ru.hintsolutions.PizzaButton.PizzaBtn;
+import ru.hintsolutions.ProBtn.ProBtn;
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,7 +15,7 @@ public class OtherActivity extends Activity {
         setContentView(R.layout.other);
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
-            PizzaBtn.onActivityCreated();
+            ProBtn.onActivityCreated();
         }
     }
 
@@ -24,7 +24,7 @@ public class OtherActivity extends Activity {
         super.onResume();
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
-            PizzaBtn.onActivityResumed(this);
+            ProBtn.onActivityResumed(this);
         }
     }
 
@@ -32,7 +32,7 @@ public class OtherActivity extends Activity {
     protected void onPause() {
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
-            PizzaBtn.onActivityPaused();
+            ProBtn.onActivityPaused();
         }
         super.onPause();
     }
@@ -41,7 +41,7 @@ public class OtherActivity extends Activity {
     protected void onDestroy() {
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
-            PizzaBtn.onActivityDestroyed(this);
+            ProBtn.onActivityDestroyed(this);
         }
         super.onDestroy();
     }
