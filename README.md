@@ -13,10 +13,10 @@ Real example:
 How to use ProBtn SDK
 -----
 
-1. Sign up to admin.heroku.com
+1. Sign up to admin.probtn.com
 2. Register your app: create new application, select it's platform (Android) and BundleID (root package name of your app)
 3. Choose the site to promote in your application.
-4. Integrate PizzaButton with your application using the following instructions:
+4. Integrate ProButton with your application using the following instructions:
 
 Integrating ProBtn SDK with your Android application
 -----
@@ -25,9 +25,9 @@ Integrating ProBtn SDK with your Android application
 2. Add ProButton.jar library to your project module and dependencies
 3. Add "INTERNET", "ACCESS_COARSE_LOCATION" and "ACCESS_FINE_LOCATION" permissions to your AndroidManifest.xml 
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    	<uses-permission android:name="android.permission.INTERNET"/>  
+    	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>  
+    	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>  
 
 4. For targets with API level >= 14 all is you need is just to add the following line to onCreate method of the root activity:
 	
