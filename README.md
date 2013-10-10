@@ -23,7 +23,12 @@ Integrating ProBtn SDK with your Android application
 
 1. Clone repository or download project ZIP
 2. Add ProButton.jar library to your project module and dependencies
-3. Add "android.permission.INTERNET" permission to your AndroidManifest.xml 
+3. Add "INTERNET", "ACCESS_COARSE_LOCATION" and "ACCESS_FINE_LOCATION" permissions to your AndroidManifest.xml 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
 4. For targets with API level >= 14 all is you need is just to add the following line to onCreate method of the root activity:
 	
 	ProBtn.open(this);
