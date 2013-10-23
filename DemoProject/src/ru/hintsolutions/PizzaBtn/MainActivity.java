@@ -23,18 +23,18 @@ public class MainActivity extends Activity {
         (findViewById(R.id.showButton)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Show Pizza Button programmatically
+                // Show ProButton programmatically
                 ProBtn.show(MainActivity.this);
             }
         });
         (findViewById(R.id.hideButon)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Hide Pizza Button programmatically
+                // Hide ProButton programmatically
                 ProBtn.hide();
             }
         });
-        // Activate Pizza Button
+        // Activate ProButton
         ProBtn.open(MainActivity.this);
         // Callback for devices with Android API level lower than 11
         if (android.os.Build.VERSION.SDK_INT < 11) {
