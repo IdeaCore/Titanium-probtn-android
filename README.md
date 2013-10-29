@@ -8,7 +8,7 @@ ProBtn is an interactive element that used to show custom content inside your ap
 
 Real example:
 -----
-![ScreenShot](http://www.probtn.com/wp-content/uploads/2013/09/pizzabtn-android.gif)
+![ScreenShot](http://www.probtn.com/wp-content/uploads/2013/10/probtngif.gif)
 
 How to use ProBtn SDK
 -----
