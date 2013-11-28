@@ -8,7 +8,7 @@ ProBtn is an interactive element that used to show custom content inside your ap
 
 Real example:
 -----
-![ScreenShot](http://www.probtn.com/wp-content/uploads/2013/09/pizzabtn-android.gif)
+![ScreenShot](http://www.probtn.com/wp-content/uploads/2013/10/probtngif.gif)
 
 How to use ProBtn SDK
 -----
@@ -31,8 +31,7 @@ Integrating ProBtn SDK with your Android application
 
 4. For targets with API level >= 14 all is you need is just to add the following line to onCreate method of the root activity:
 	
-	ProBtn.open(this);
-	
+    	ProBtn.open(this);
 	
 For targets with lower API levels you also need to set up the following callbacks for each activity in your app:
 
@@ -69,20 +68,18 @@ For targets with lower API levels you also need to set up the following callback
 	    }
 	    super.onDestroy();
 	    ...
-	}
+    	}
 
 5. Feel free to control the button at any time by calling ProBtn.showProBtn() and  ProBtn.hideProBtn() methods.
 6. Button usage statistics for current package can be taken using the following method with callback:
-
-	ProBtn.getUsageStatistics(new ProBtn.ProButtonStatisticsCallback() {
-        	@Override
-                public void done(JSONObject jsonObject, Exception e) {
-
-                    // insert your code here
-
-                }
-        });
-
+    
+    	ProBtn.getUsageStatistics(new ProBtn.ProButtonStatisticsCallback() {
+    	@Override
+        	public void done(JSONObject jsonObject, Exception e) {
+            	// insert your code here
+        	}
+    	});
+    
 How to run example project? (using Intellij IDEA)
 ---------------
 1. File->Import project..
