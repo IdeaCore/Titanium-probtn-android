@@ -99,3 +99,8 @@ Server side
 All the settings are taken from the server so you can customize the appearance of the button by simply changing the on the server side. 
 The server address is [admin.probtn.com](http://admin.probtn.com/ "admin.probtn.com"). After all the data loaded from the server the button would appear automatically.
 
+Known issues
+---------------
+
+If your targetSdkVersion parameter is lower than 14, you need to add "android:hardwareAccelerated="true"" to every activity declaration in AndroidManifest.xml to avoid some performance issues. 
+
