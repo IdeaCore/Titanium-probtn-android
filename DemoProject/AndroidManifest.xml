@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="ru.hintsolutions.PizzaBtn"
+          package="ru.hintsolutions.profitbuttondemo"
           android:versionCode="1"
           android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16"/>
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="19"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
-        <activity android:name="MainActivity"
+        <activity android:name=".MainActivity"
                   android:label="@string/app_name"
                   android:theme="@android:style/Theme.Light">
             <intent-filter>

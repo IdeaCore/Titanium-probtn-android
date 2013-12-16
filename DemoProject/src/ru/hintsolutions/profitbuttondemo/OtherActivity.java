@@ -1,4 +1,4 @@
-package ru.hintsolutions.PizzaBtn;
+package ru.hintsolutions.profitbuttondemo;
 
 import android.app.Activity;
 import android.os.Bundle;
