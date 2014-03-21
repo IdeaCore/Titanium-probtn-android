@@ -37,7 +37,7 @@ For targets with lower API levels you also need to set up the following callback
 
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    if (android.os.Build.VERSION.SDK_INT < 11) {
+	    if (android.os.Build.VERSION.SDK_INT < 14) {
 	        ProBtn.onActivityCreated();
 	    }
 	    ...
@@ -46,7 +46,7 @@ For targets with lower API levels you also need to set up the following callback
 	@Override
 	protected void onResume() {
 	super.onResume();
-	    if (android.os.Build.VERSION.SDK_INT < 11) {
+	    if (android.os.Build.VERSION.SDK_INT < 14) {
 	        ProBtn.onActivityResumed(this);
 	    }
 	    ...
@@ -54,7 +54,7 @@ For targets with lower API levels you also need to set up the following callback
 
 	@Override
 	protected void onPause() {
-	    if (android.os.Build.VERSION.SDK_INT < 11) {
+	    if (android.os.Build.VERSION.SDK_INT < 14) {
 	        ProBtn.onActivityPaused();
 	    }
 	    super.onPause();
@@ -63,7 +63,7 @@ For targets with lower API levels you also need to set up the following callback
 
 	@Override
 	protected void onDestroy() {
-	    if (android.os.Build.VERSION.SDK_INT < 11) {
+	    if (android.os.Build.VERSION.SDK_INT < 14) {
 	        ProBtn.onActivityDestroyed(this);
 	    }
 	    super.onDestroy();
