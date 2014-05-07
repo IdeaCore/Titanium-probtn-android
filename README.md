@@ -8,7 +8,7 @@ ProBtn is an interactive element that used to show custom content inside your ap
 
 Real example:
 -----
-![ScreenShot](http://www.probtn.com/wp-content/uploads/2013/10/probtngif.gif)
+![ScreenShot](http://beta.hstor.org/getpro/habr/post_images/b10/783/d3e/b10783d3ea2cd950f54326d77b85c3e8.gif)
 
 How to use ProBtn SDK
 -----
@@ -22,26 +22,36 @@ Integrating ProBtn SDK with your Android application
 -----
 
 1. Clone repository or download project ZIP
-2. Add ProButton.jar library to your project module and dependencies
-3. Add "INTERNET", "ACCESS_COARSE_LOCATION" and "ACCESS_FINE_LOCATION" permissions to your AndroidManifest.xml 
+2. Add ProBtn.jar library to your project module and dependencies
+3. Add the following permissions to your AndroidManifest.xml 
 
-    	<uses-permission android:name="android.permission.INTERNET"/>  
+    	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    	<uses-permission android:name="android.permission.INTERNET"/>
+    	<uses-permission android:name="android.permission.VIBRATE"/>
+    	<uses-permission android:name="android.permission.REORDER_TASKS"/>
+    	<uses-permission android:name="android.permission.GET_TASKS"/> 
     	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>  
     	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>  
 
-4. For targets with API level >= 14 all is you need is just to add the following line to onCreate method of the root activity:
-	
-    	ProBtn.open(this);
+4. For targets with API level >= 14 you need to add the following code into yout root activity:
+
+    	@Override
+    	public void onCreate(Bundle savedInstanceState) {
+    	    super.onCreate(savedInstanceState);
+    	    ...
+    	    ProBtn.open(MainActivity.this);
+    	}
+    	
+    	@Override
+    	protected void onPause() {
+    	super.onPause();
+    	if (android.os.Build.VERSION.SDK_INT < 14) {
+    	    ProBtn.onActivityPaused(this);
+    	}
+    	    ProBtn.close(this);
+    	}
 	
 For targets with lower API levels you also need to set up the following callbacks for each activity in your app:
-
-	public void onCreate(Bundle savedInstanceState) {
-	    super.onCreate(savedInstanceState);
-	    if (android.os.Build.VERSION.SDK_INT < 14) {
-	        ProBtn.onActivityCreated();
-	    }
-	    ...
-	}
 
 	@Override
 	protected void onResume() {
@@ -55,20 +65,11 @@ For targets with lower API levels you also need to set up the following callback
 	@Override
 	protected void onPause() {
 	    if (android.os.Build.VERSION.SDK_INT < 14) {
-	        ProBtn.onActivityPaused();
+	        ProBtn.onActivityPaused(this);
 	    }
 	    super.onPause();
 	    ...
 	}
-
-	@Override
-	protected void onDestroy() {
-	    if (android.os.Build.VERSION.SDK_INT < 14) {
-	        ProBtn.onActivityDestroyed(this);
-	    }
-	    super.onDestroy();
-	    ...
-    	}
 
 5. Feel free to control the button at any time by calling ProBtn.showProBtn() and  ProBtn.hideProBtn() methods.
 6. Button usage statistics for current package can be taken using the following method with callback:
@@ -87,7 +88,7 @@ How to run example project? (using Intellij IDEA)
 3. "Create project from existing sources"
 4. Specify project name and press "Next"
 5. Select all directories and press "Next" 
-6. Mark "ProButton" library as used in the project, press "Next"
+6. Mark "ProBtn" library as used in the project, press "Next"
 7. Include selected module to the project and press "Next"
 8. Choose project SDK (Android 4.x.x Platform recommended), press "Next"
 9. Press "Next"
@@ -98,6 +99,8 @@ Server side
 
 All the settings are taken from the server so you can customize the appearance of the button by simply changing the on the server side. 
 The server address is [admin.probtn.com](http://admin.probtn.com/ "admin.probtn.com"). After all the data loaded from the server the button would appear automatically.
+
+Now ProBtn is not visible on the devices with Android lower than 4.1. You can enable ProBtn for older Andoird versions changing "Android Min Api Level" parameter ("Fine Tuning" tab).
 
 Known issues
 ---------------
