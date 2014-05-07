@@ -12,12 +12,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show PizzaBtn"
+        android:text="Show ProBtn"
         android:id="@+id/showButton"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hide PizzaBtn"
+        android:text="Hide ProBtn"
         android:id="@+id/hideButon"/>
 </LinearLayout>
 

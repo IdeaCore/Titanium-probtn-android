@@ -31,41 +31,27 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 // Hide ProButton programmatically
-                ProBtn.hide();
+                ProBtn.hide(MainActivity.this);
             }
         });
         // Activate ProButton
         ProBtn.open(MainActivity.this);
-        // Callback for devices with Android API level lower than 11
-        if (android.os.Build.VERSION.SDK_INT < 11) {
-            ProBtn.onActivityCreated();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (android.os.Build.VERSION.SDK_INT < 14) {
+            ProBtn.onActivityPaused(this);
         }
+        ProBtn.close(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Callback for devices with Android API level lower than 11
-        if (android.os.Build.VERSION.SDK_INT < 11) {
+        if (android.os.Build.VERSION.SDK_INT < 14) {
             ProBtn.onActivityResumed(this);
         }
-    }
-
-    @Override
-    protected void onPause() {
-        // Callback for devices with Android API level lower than 11
-        if (android.os.Build.VERSION.SDK_INT < 11) {
-            ProBtn.onActivityPaused();
-        }
-        super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        // Callback for devices with Android API level lower than 11
-        if (android.os.Build.VERSION.SDK_INT < 11) {
-            ProBtn.onActivityDestroyed(this);
-        }
-        super.onDestroy();
     }
 }
