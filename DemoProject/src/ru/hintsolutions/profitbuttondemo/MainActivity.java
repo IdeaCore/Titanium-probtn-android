@@ -44,7 +44,6 @@ public class MainActivity extends Activity {
         if (android.os.Build.VERSION.SDK_INT < 14) {
             ProBtn.onActivityPaused(this);
         }
-        ProBtn.close(this);
     }
 
     @Override
@@ -53,5 +52,11 @@ public class MainActivity extends Activity {
         if (android.os.Build.VERSION.SDK_INT < 14) {
             ProBtn.onActivityResumed(this);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        ProBtn.close(this);
+        super.onDestroy();
     }
 }
