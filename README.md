@@ -30,8 +30,17 @@ Integrating ProBtn SDK with your Android application
     	<uses-permission android:name="android.permission.VIBRATE"/>
     	<uses-permission android:name="android.permission.REORDER_TASKS"/>
     	<uses-permission android:name="android.permission.GET_TASKS"/> 
-    	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>  
-    	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>  
+    	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>  // optional
+    	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>  // optional
+    	
+and declare a service
+
+    	<service android:name="ru.hintsolutions.ProBtn.ProBtnService" >
+    		<intent-filter>
+    			<action android:name="android.intent.action.CONFIGURATION_CHANGED"/>
+    		</intent-filter>
+    	</service>
+
 
 4. For targets with API level >= 14 you need to add the following code into yout root activity:
 
@@ -43,13 +52,10 @@ Integrating ProBtn SDK with your Android application
     	}
     	
     	@Override
-    	protected void onPause() {
-    	super.onPause();
-    	if (android.os.Build.VERSION.SDK_INT < 14) {
-    	    ProBtn.onActivityPaused(this);
-    	}
-    	    ProBtn.close(this);
-    	}
+    	protected void onDestroy() {
+            ProBtn.close(this);
+            super.onDestroy();
+        }
 	
 For targets with lower API levels you also need to set up the following callbacks for each activity in your app:
 
