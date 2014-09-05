@@ -57,7 +57,7 @@ Integrating ProBtn SDK with your Android application
             super.onDestroy();
         }
 	
-For targets with lower API levels you also need to set up the following callbacks for each activity in your app:
+	For targets with lower API levels you also need to set up the following callbacks for each activity in your app:
 
 	@Override
 	protected void onResume() {
@@ -86,6 +86,12 @@ For targets with lower API levels you also need to set up the following callback
             	// insert your code here
         	}
     	});
+
+7. Also you can interact with ProfitButton from your own landings using JS:
+
+    	<button type="button" value="someValue" onclick="proBtn.hide();">Hide button</button>
+    	<button type="button" value="someValue" onclick="proBtn.hideContent();">Hide content</button>
+    	<button type="button" value="someValue" onclick="proBtn.performAction();">Perform action for current user (targetting)</button>
     
 How to run example project? (using Intellij IDEA)
 ---------------
