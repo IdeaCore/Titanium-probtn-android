@@ -59,23 +59,23 @@ Integrating ProBtn SDK with your Android application
 	
 	For targets with lower API levels you also need to set up the following callbacks for each activity in your app:
 
-	@Override
-	protected void onResume() {
-	super.onResume();
-	    if (android.os.Build.VERSION.SDK_INT < 14) {
-	        ProBtn.onActivityResumed(this);
-	    }
-	    ...
-	}
+    	@Override
+    	protected void onResume() {
+    		super.onResume();
+    		if (android.os.Build.VERSION.SDK_INT < 14) {
+    			ProBtn.onActivityResumed(this);
+    		}
+    		...
+    	}
 
-	@Override
-	protected void onPause() {
-	    if (android.os.Build.VERSION.SDK_INT < 14) {
-	        ProBtn.onActivityPaused(this);
-	    }
-	    super.onPause();
-	    ...
-	}
+    	@Override
+    	protected void onPause() {
+    		if (android.os.Build.VERSION.SDK_INT < 14) {
+    			ProBtn.onActivityPaused(this);
+    		}
+    		super.onPause();
+    		...
+    	}
 
 5. Feel free to control the button at any time by calling ProBtn.showProBtn() and  ProBtn.hideProBtn() methods.
 6. Button usage statistics for current package can be taken using the following method with callback:
