@@ -33,8 +33,8 @@ Integrating ProBtn SDK with your Android application
     	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>  // optional
     	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>  // optional
     	
-and declare a service
-
+	and declare a service
+	
     	<service android:name="ru.hintsolutions.ProBtn.ProBtnService" >
     		<intent-filter>
     			<action android:name="android.intent.action.CONFIGURATION_CHANGED"/>
